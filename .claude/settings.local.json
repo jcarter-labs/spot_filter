@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($pw = 'uWxjt9QZGhg2DeKTWQAQ'; python -c \"import urllib.request, urllib.parse; url = 'https://xmldata.qrz.com/xml/current/?' + urllib.parse.urlencode\\({'username': 'N6YU', 'password': '$pw', 'agent': 'n6yu-chat-lookup/1.0'}\\); req = urllib.request.Request\\(url, headers={'User-Agent': 'n6yu-chat-lookup/1.0'}\\); resp = urllib.request.urlopen\\(req, timeout=15\\); print\\(resp.read\\(\\).decode\\(\\)\\)\")",
+      "PowerShell(Compress-Archive *)",
+      "PowerShell(git commit *)",
+      "PowerShell(git remote *)",
+      "PowerShell(git push *)",
+      "PowerShell(git *)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" 40,20,15,10)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" 40,20,15)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20,15,10 --spotters regional)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20,15 --spotters local)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20,15,10 --spotters regional --cont AS)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20,15 --spotters local --state WV)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20 --state WV --cont AS)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --cluster cc --bands 40,20)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20,15,10)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20,15 --call-prefix JA)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 80,40,20,15)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20,15 --cont XX)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20,15 --state WV --cont AS)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" --bands 40,20,99)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\" -h)",
+      "PowerShell(git status *)",
+      "PowerShell(python \"C:\\\\Users\\\\johnn\\\\Radio\\\\Projects\\\\spot_filter.py\")",
+      "PowerShell(New-Item *)",
+      "PowerShell(Move-Item *)"
+    ]
+  }
+}
