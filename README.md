@@ -48,29 +48,7 @@ python spot_filter.py --bands 40,20,17,15,12,10 --spotters regional --call-prefi
 
 ### Data flow
 
-```
-                        INPUTS                          PROCESSING                    OUTPUT
- ┌─────────────────────────────────┐
- │  --bands       40,20,15        │
- │  --spotters    local/regional  │         ┌──────────────────────┐
- │  --cluster     ar6             │────────▶│  Filter Spec         │
- │  --state       WV              │         │  (dataclass)         │        ┌──────────────────────┐
- │  --cont        AS              │         │                      │        │                      │
- │  --call-prefix JA              │         │  bands: [40,20,15]   │        │  SET DX FILTER       │
- └─────────────────────────────────┘         │  spotters: [W6YX..]  │───────▶│  Skimmer AND NOT     │
-                                            │  mode: CW            │        │  SkimBusted AND ...  │
-              Hardcoded defaults:           │  state/cont/prefix   │        │                      │
- ┌─────────────────────────────────┐         └──────────────────────┘        │  One-line string     │
- │  Mode       = CW  (always)     │                    │                    │  ready to paste      │
- │  Skimmer    = on  (always)     │                    ▼                    │  into N1MM           │
- │  SkimBusted = off (always)     │         ┌──────────────────────┐        └──────────────────────┘
- └─────────────────────────────────┘         │  Grammar Renderer    │
-                                            │                      │
-                                            │  ar6 ──▶ implemented │
-                                            │  cc  ──▶ stub        │
-                                            │  dxspider ──▶ stub   │
-                                            └──────────────────────┘
-```
+![DX filter command pipeline](docs/dx-filter-pipeline.svg)
 
 ## Other files
 

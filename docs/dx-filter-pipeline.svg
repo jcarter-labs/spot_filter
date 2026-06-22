@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#444" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="420" rx="8" fill="#f8f9fa" stroke="#ddd" />
+
+  <!-- Column headers -->
+  <text x="130" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">INPUTS</text>
+  <text x="480" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">PROCESSING</text>
+  <text x="790" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">OUTPUT</text>
+
+  <!-- CLI Arguments box -->
+  <rect x="20" y="50" width="220" height="170" rx="6" fill="#e3f2fd" stroke="#1976d2" stroke-width="1.5" />
+  <text x="130" y="72" text-anchor="middle" font-weight="bold" fill="#1976d2" font-size="12">CLI Arguments</text>
+  <text x="34" y="96" font-family="Consolas, monospace" font-size="12" fill="#333">--bands      40,20,15</text>
+  <text x="34" y="116" font-family="Consolas, monospace" font-size="12" fill="#333">--spotters   local</text>
+  <text x="34" y="136" font-family="Consolas, monospace" font-size="12" fill="#333">--cluster    ar6</text>
+  <text x="34" y="156" font-family="Consolas, monospace" font-size="12" fill="#333">--state      WV</text>
+  <text x="34" y="176" font-family="Consolas, monospace" font-size="12" fill="#333">--cont       AS</text>
+  <text x="34" y="196" font-family="Consolas, monospace" font-size="12" fill="#333">--call-prefix JA</text>
+  <text x="130" y="214" text-anchor="middle" font-size="10" fill="#888">(all optional — defaults apply)</text>
+
+  <!-- Hardcoded defaults box -->
+  <rect x="20" y="250" width="220" height="100" rx="6" fill="#fce4ec" stroke="#c62828" stroke-width="1.5" />
+  <text x="130" y="272" text-anchor="middle" font-weight="bold" fill="#c62828" font-size="12">Hardcoded Defaults</text>
+  <text x="34" y="296" font-family="Consolas, monospace" font-size="12" fill="#333">Mode       = CW</text>
+  <text x="34" y="316" font-family="Consolas, monospace" font-size="12" fill="#333">Skimmer    = on</text>
+  <text x="34" y="336" font-family="Consolas, monospace" font-size="12" fill="#333">SkimBusted = off</text>
+
+  <!-- Arrow: CLI args → Filter Spec -->
+  <line x1="240" y1="135" x2="360" y2="135" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- Arrow: Defaults → Filter Spec -->
+  <line x1="240" y1="300" x2="340" y2="300" stroke="#444" stroke-width="1.2" stroke-dasharray="6,3" />
+  <line x1="340" y1="300" x2="340" y2="180" stroke="#444" stroke-width="1.2" stroke-dasharray="6,3" />
+  <line x1="340" y1="180" x2="360" y2="180" stroke="#444" stroke-width="1.2" stroke-dasharray="6,3" marker-end="url(#arrow)" />
+
+  <!-- Filter Spec box -->
+  <rect x="365" y="70" width="210" height="165" rx="6" fill="#e8f5e9" stroke="#388e3c" stroke-width="1.5" />
+  <text x="470" y="92" text-anchor="middle" font-weight="bold" fill="#388e3c" font-size="12">FilterSpec</text>
+  <text x="470" y="108" text-anchor="middle" font-size="10" fill="#666">(dataclass)</text>
+  <text x="379" y="132" font-family="Consolas, monospace" font-size="11" fill="#333">bands: [40,20,15]</text>
+  <text x="379" y="152" font-family="Consolas, monospace" font-size="11" fill="#333">spotters: [W6YX..]</text>
+  <text x="379" y="172" font-family="Consolas, monospace" font-size="11" fill="#333">mode: CW</text>
+  <text x="379" y="192" font-family="Consolas, monospace" font-size="11" fill="#333">state / cont / prefix</text>
+  <text x="379" y="212" font-family="Consolas, monospace" font-size="11" fill="#333">skimmer: True</text>
+  <text x="379" y="228" font-family="Consolas, monospace" font-size="11" fill="#333">skim_busted: False</text>
+
+  <!-- Arrow: Filter Spec → Grammar Renderer -->
+  <line x1="470" y1="235" x2="470" y2="280" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- Grammar Renderer box -->
+  <rect x="365" y="285" width="210" height="110" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5" />
+  <text x="470" y="307" text-anchor="middle" font-weight="bold" fill="#e65100" font-size="12">Grammar Renderer</text>
+  <text x="379" y="335" font-size="12" fill="#333">ar6</text>
+  <text x="420" y="335" font-size="12" fill="#388e3c" font-weight="bold">&#x2714; implemented</text>
+  <text x="379" y="358" font-size="12" fill="#333">cc</text>
+  <text x="420" y="358" font-size="12" fill="#999">stub</text>
+  <text x="379" y="381" font-size="12" fill="#333">dxspider</text>
+  <text x="445" y="381" font-size="12" fill="#999">stub</text>
+
+  <!-- Arrow: Grammar Renderer → Output -->
+  <line x1="575" y1="340" x2="670" y2="200" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)" />
+
+  <!-- Output box -->
+  <rect x="675" y="80" width="225" height="185" rx="6" fill="#ede7f6" stroke="#5e35b1" stroke-width="1.5" />
+  <text x="787" y="102" text-anchor="middle" font-weight="bold" fill="#5e35b1" font-size="12">Output → stdout</text>
+  <text x="689" y="130" font-family="Consolas, monospace" font-size="10.5" fill="#333">SET DX FILTER</text>
+  <text x="689" y="148" font-family="Consolas, monospace" font-size="10.5" fill="#333">Skimmer AND NOT</text>
+  <text x="689" y="166" font-family="Consolas, monospace" font-size="10.5" fill="#333">SkimBusted AND</text>
+  <text x="689" y="184" font-family="Consolas, monospace" font-size="10.5" fill="#333">Mode=CW AND</text>
+  <text x="689" y="202" font-family="Consolas, monospace" font-size="10.5" fill="#333">(Band=40 OR ...) AND</text>
+  <text x="689" y="220" font-family="Consolas, monospace" font-size="10.5" fill="#333">(Spotter=[W6YX-#,..])</text>
+  <text x="787" y="252" text-anchor="middle" font-size="11" fill="#666">One-line string</text>
+  <text x="787" y="258" text-anchor="middle" font-size="11" fill="#666">ready to paste into N1MM</text>
+
+</svg>
