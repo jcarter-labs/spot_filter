@@ -126,6 +126,40 @@ SET DX MODE FILTER
 
 ---
 
+## ADR-12: RAC Canada Day Contest filter — multi-value `State=` for provinces/territories
+
+- **Decision:** Use `State=[BC,AB,SK,MB,ON,QC,NB,NS,PE,NL,YT,NT,NU]` (bracket shorthand, ADR-5) to scope spotted DX to Canada's 10 provinces and 3 territories — the exact set of RAC Canada Day multiplier entities.
+- **Rejected alternatives:**
+  - `Cont=NA` — too broad; includes US, Mexico, and all other NA entities.
+  - `Cty=` — field is in the ADR-4 confirmed list but exact value format (prefix vs. name vs. DXCC number) is untested on NC7J; skipped in favor of the already-confirmed `State=` field.
+  - `Call=VE*/VA*/VY*/VO*` — Canada uses multiple prefixes; multi-prefix OR logic is more fragile than the state lookup table already built into the cluster.
+- **Live confirmation (2026-07-01):** NC7J echoed back the bracket expansion correctly:
+
+```
+DX filter set to: skimmer and skimbusted=0 and mode = cw and
+(state = bc or state = ab or state = sk or state = mb or state = on or state = qc or
+ state = nb or state = ns or state = pe or state = nl or state = yt or state = nt or state = nu)
+and (band = 40 or band = 20 or band = 15 or band = 10)
+and ((spotter = w6yx-# or spotter = ak6ri-1-# or spotter = n6tv-# or spotter = k6fod-# or
+      spotter = wa7lnw-# or spotter = nd7k-# or spotter = k7co-# or spotter = ng7m-# or
+      spotter = n7vvx-# or spotter = n7tug-# or spotter = kd7efg-# or spotter = kw7mm-# or
+      spotter = kw7mm-2-#))
+```
+
+- **Filter:**
+
+```
+SET DX FILTER Skimmer AND NOT SkimBusted AND Mode=CW AND State=[BC,AB,SK,MB,ON,QC,NB,NS,PE,NL,YT,NT,NU] AND (Band=40 OR Band=20 OR Band=15 OR Band=10) AND (Spotter=[W6YX-#,AK6RI-1-#,N6TV-#,K6FOD-#,WA7LNW-#,ND7K-#,K7CO-#,NG7M-#,N7VVX-#,N7TUG-#,KD7EFG-#,KW7MM-#,KW7MM-2-#])
+
+SET DX MODE FILTER
+```
+
+- **Invoke:** `spot_filter --bands 40,20,15,10 --spotters regional --state BC,AB,SK,MB,ON,QC,NB,NS,PE,NL,YT,NT,NU`
+- **Script change:** `--state` now accepts comma-separated values; single value renders `State=X`, multiple renders `State=[X,Y,...]`. `FilterSpec.state` changed from `str | None` to `list[str] | None`.
+- **Semantic risk:** Same open question as ADR-7 — cluster's internal state-to-callsign mapping is assumed authoritative but unvalidated for Canadian provinces. Territorial prefixes (VY1/VY0 for YT/NU, VE8 for NT) are less common; confirm a live spot from each territory before relying on those entries operationally.
+
+---
+
 ## Outstanding action items
 
 1. ~~Validate `State=WV` semantics against a live confirmed WV spot.~~ — **Confirmed (2026-06-20).**

@@ -27,7 +27,7 @@ class FilterSpec:
     mode: str = "CW"
     skimmer: bool = True
     skim_busted: bool = False
-    state: str | None = None
+    state: list[str] | None = None
     cont: str | None = None
     call_prefix: str | None = None
 
@@ -36,7 +36,10 @@ def render_ar6(spec: FilterSpec) -> str:
     parts = ["Skimmer", "NOT SkimBusted", f"Mode={spec.mode}"]
 
     if spec.state:
-        parts.append(f"State={spec.state}")
+        if len(spec.state) == 1:
+            parts.append(f"State={spec.state[0]}")
+        else:
+            parts.append(f"State=[{','.join(spec.state)}]")
     if spec.cont:
         parts.append(f"Cont={spec.cont}")
     if spec.call_prefix:
@@ -116,7 +119,7 @@ def main():
     dx_group = parser.add_mutually_exclusive_group()
     dx_group.add_argument(
         "--state",
-        help="Filter spotted stations by US state (e.g. WV, CA)"
+        help="Filter spotted stations by US state or Canadian province/territory, comma-separated (e.g. WV or BC,AB,ON)"
     )
     dx_group.add_argument(
         "--cont",
@@ -143,7 +146,7 @@ def main():
     spec = FilterSpec(
         bands=bands,
         spotters=SPOTTER_TIERS[args.spotters],
-        state=args.state.upper() if args.state else None,
+        state=[s.strip().upper() for s in args.state.split(",")] if args.state else None,
         cont=args.cont.upper() if args.cont else None,
         call_prefix=args.call_prefix.upper() if args.call_prefix else None,
     )
