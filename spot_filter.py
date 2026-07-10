@@ -29,7 +29,7 @@ class FilterSpec:
     skim_busted: bool = False
     state: list[str] | None = None
     cont: str | None = None
-    call_prefix: str | None = None
+    call_prefix: list[str] | None = None
 
 
 def render_ar6(spec: FilterSpec) -> str:
@@ -43,7 +43,10 @@ def render_ar6(spec: FilterSpec) -> str:
     if spec.cont:
         parts.append(f"Cont={spec.cont}")
     if spec.call_prefix:
-        parts.append(f"Call={spec.call_prefix}*")
+        if len(spec.call_prefix) == 1:
+            parts.append(f"Call={spec.call_prefix[0]}*")
+        else:
+            parts.append(f"Call=[{','.join(p + '*' for p in spec.call_prefix)}]")
 
     band_expr = " OR ".join(f"Band={b}" for b in spec.bands)
     parts.append(f"({band_expr})")
@@ -100,7 +103,9 @@ def main():
                "  spot_filter.py --bands 40,20,15,10\n"
                "  spot_filter.py --bands 40,20,15,10 --spotters regional --cont AS\n"
                "  spot_filter.py --state WV\n"
-               "  spot_filter.py --bands 40,20,17,15,12,10 --spotters regional --call-prefix JA",
+               "  spot_filter.py --call-prefix MB\n"
+               "  spot_filter.py --call-prefix G,M,F,PA,ON\n"
+               "  spot_filter.py --bands 40,20,17,15,12,10 --spotters regional --call-prefix JA,BY",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument(
@@ -127,7 +132,7 @@ def main():
     )
     dx_group.add_argument(
         "--call-prefix",
-        help="Filter spotted stations by callsign prefix (e.g. JA, VK, G)"
+        help="Filter by callsign prefix, comma-separated for multiple (e.g. G,M or G,M,F,PA,ON)"
     )
 
     args = parser.parse_args()
@@ -148,7 +153,7 @@ def main():
         spotters=SPOTTER_TIERS[args.spotters],
         state=[s.strip().upper() for s in args.state.split(",")] if args.state else None,
         cont=args.cont.upper() if args.cont else None,
-        call_prefix=args.call_prefix.upper() if args.call_prefix else None,
+        call_prefix=[p.strip().upper() for p in args.call_prefix.split(",")] if args.call_prefix else None,
     )
 
     renderer = RENDERERS[args.cluster]
