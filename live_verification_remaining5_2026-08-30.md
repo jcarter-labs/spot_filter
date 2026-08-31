@@ -40,15 +40,18 @@ first — same method as the original top-5 test.
 | **W4MYA** | dxc.w4mya.us:7373 | 0 spots/60s | CC-Cluster v3.397 (banner confirms) | Banner explicitly states skimmer defaults off (`set/skimmer` to enable) — same pattern as W3LPL, needs a skimmer-enabled retest before drawing a conclusion |
 | **VE6DXC** | dx.middlebrook.ca:8000 | Weak — 1 spot/60s | DXSpider (per NG3K; banner was minimal, just `login:`) | Lowest live spot volume of any alive node tested |
 
-## Open follow-ups
+## Follow-ups
 
-1. **K1TTT AR-Cluster version check** — confirm via `HELP` output or
-   version banner whether it runs AR-Cluster V6 specifically (matching
-   NC7J and this project's ADR-documented filter grammar) or an older
-   version with different syntax, before recommending it as a backup.
-2. **W4MYA skimmer-enabled retest** — same treatment as W3LPL's
-   successful retest, to get a real spot-volume reading instead of the
-   skimmer-off default result.
-3. VE6DXC's weak 1-spot result could be re-tested with a longer window
-   or at a different time of day before concluding it's genuinely
-   low-volume rather than just unlucky timing.
+1. **K1TTT AR-Cluster version — RESOLVED.** Confirmed by the account
+   owner (K1TTT sysop information): AR-Cluster V6.1.5061, same major
+   version family as NC7J. Promoted to the confirmed spot_filt backup
+   recommendation in `na_cluster_ranking_2026-08.md`.
+2. **W4MYA skimmer-enabled retest — RESOLVED.** `set/skimmer` retest:
+   **3 spots in 23.9s.** Fully live-confirmed. Banner also reported
+   `Cluster: 80 nodes 19 Locals 537 Total users, Uptime 4d 9h32m`, and
+   the sysop mentioned a new node in testing, `dxc.w4mya.us:8300`
+   ("Go-Cluster") — not previously in any source, noted for a future
+   round.
+3. VE6DXC's weak 1-spot result is still open — could be re-tested with
+   a longer window or at a different time of day before concluding
+   it's genuinely low-volume rather than just unlucky timing.
