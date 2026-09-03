@@ -1,6 +1,6 @@
 # NC7J Spotter Groups — Local / Regional
 
-Derived from the 27-call candidate list (+ AK6RI-1), vetted against three independent sources: live NC7J `SHow/Skimmer`, the W3RGA daily dupe report (`qsl.net/w3rga/top-spotter/dupe_report.csv`), and the SM7IUN skew/calibration report. Distance computed from grid square (dxwatch.com node detail list) to home QTH CM87vk via great-circle (haversine) calculation. See `nc7j_filter_adr.md` for full ADR history and `rbn_reference_sites.md` for source documentation.
+Derived from the 27-call candidate list (+ AK6RI-1), vetted against three independent sources: live NC7J `SHow/Skimmer`, the W3RGA daily dupe report (`qsl.net/w3rga/top-spotter/dupe_report.csv`), and the SM7IUN skew/calibration report. Distance computed from grid square (dxwatch.com node detail list) to home QTH CM87vk via great-circle (haversine) calculation. See `../../adr/nc7j_filter_adr.md` for full ADR history and `rbn_reference_sites.md` for source documentation.
 
 **Exclusions applied:** W6DVN omitted — no grid, no W3RGA entry, no skew entry; unverifiable across all three sources. VE6WZ family, VE6JY, WX7V/5, K7EK, KH6LC, WB6BEE, NH6HI, WZ7I, VK6ANC excluded as >1000 mi (see distance table in prior session turn for full figures).
 

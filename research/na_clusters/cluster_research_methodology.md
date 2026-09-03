@@ -25,7 +25,7 @@ session; the report notes this rather than forcing a placeholder entry.
    primary seed; filtered to NA-hosted only.
 2. **Evidence gathering per candidate**, across source classes: curated
    directories (NG3K, dxcluster.info), first-party project evidence (this
-   repo's own live-tested `nc7j_filter_adr.md`, dated 2026-06-20 through
+   repo's own live-tested `../../adr/nc7j_filter_adr.md`, dated 2026-06-20 through
    2026-07-01), structured third-party activity data (DXHeat.com
    per-node "latest spot" timestamps, used as a dated, non-forum
    reachability proxy — the W3RGA spot-volume CSV that was originally
@@ -66,7 +66,7 @@ session; the report notes this rather than forcing a placeholder entry.
    date used as the available structured proxy, see Limitations),
    **Capability** (filter grammar family *and* feature depth within it —
    NC7J's SpotterState/SpotterCont fields, directly confirmed via this
-   project's own live echo-test in `nc7j_filter_adr.md`, count for more
+   project's own live echo-test in `../../adr/nc7j_filter_adr.md`, count for more
    than a bare grammar-family listing), and **Community/support**
    (independent sentiment and node-to-node adoption, e.g. other nodes
    running VE7CC's own CC-Cluster engine). General ham-community

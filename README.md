@@ -52,10 +52,9 @@ python spot_filter.py --bands 40,20,17,15,12,10 --spotters regional --call-prefi
 
 ## Other files
 
-- **nc7j_filter_adr.md** — Architecture Decision Record documenting the iterative discovery of AR-Cluster V6 filter syntax, confirmed field lists, boolean/grouping grammar, and live-tested filter strings for contest use. Includes standing filters for general CW contest operation (ADR-8) and All Asia DX CW (ADR-10).
-- **nc7j_spotter_groups.md** — Vetted spotter/skimmer callsign lists for local and regional tiers, with distance, volume, dupe rate, and skew data from W3RGA and SM7IUN.
-- **rbn_reference_sites.md** — Reference list of RBN node status and skimmer quality data sources.
-- **qrz-lookup.skill** — Claude Code skill package for looking up amateur radio callsigns against the QRZ.com XML API.
+- **adr/nc7j_filter_adr.md** — Architecture Decision Record documenting the iterative discovery of AR-Cluster V6 filter syntax, confirmed field lists, boolean/grouping grammar, and live-tested filter strings for contest use. Includes standing filters for general CW contest operation (ADR-8) and All Asia DX CW (ADR-10).
+- **research/na_clusters/** — North America DX cluster server research: methodology, ranking, live-verification results, and supporting reference docs (`nc7j_spotter_groups.md`, `rbn_reference_sites.md`).
+- **skills/** — Claude Code skill packages: `qrz-lookup.skill` (QRZ.com XML API callsign lookups) and `groupsio-fetch.skill` (authenticated groups.io access, with process doc `groupsio_access_process.md`).
 
 ## Filter reference
 

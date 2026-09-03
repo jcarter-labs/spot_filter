@@ -71,7 +71,7 @@ the same reason.
 version family as NC7J.** Of all 10 candidates tested live, it's the
 only other node running AR-Cluster — and its version (V6.1.5061,
 confirmed) matches the V6 generation this project's ADR work
-(`nc7j_filter_adr.md`) already documents the filter grammar for. Live
+(`../../adr/nc7j_filter_adr.md`) already documents the filter grammar for. Live
 spot volume was modest in the one test window (2 spots/60s) — not
 disqualifying, but worth a longer retest before relying on it
 operationally.

@@ -23,6 +23,6 @@ Reference list of websites providing RBN node, skimmer status, or spotter-qualit
 ## Notes
 
 - **reversebeacon.net** and **dxwatch.com/skimmer.dxwatch.com** are both hosted/maintained by the same person (Felipe Ceglia, PY1NB) — expect overlapping but not identical data.
-- **ab5k.net**, referenced in NC7J's own `HELP` output as the AR-Cluster filter documentation source, is now a dead/squatted domain (confirmed this session). Do not use; see ADR-3 in `nc7j_filter_adr.md` for the working replacement references (k3lr.com, reversebeacon.net archived PDFs).
+- **ab5k.net**, referenced in NC7J's own `HELP` output as the AR-Cluster filter documentation source, is now a dead/squatted domain (confirmed this session). Do not use; see ADR-3 in `../../adr/nc7j_filter_adr.md` for the working replacement references (k3lr.com, reversebeacon.net archived PDFs).
 - The W3RGA dupe-report CSV and the SM7IUN skew-analytics report are complementary, not redundant: dupe% measures spot-quality (duplicate/busted rate), skew (ppm) measures the skimmer's frequency calibration accuracy. Both were used this session to evaluate the 27-callsign filter list.
 - robots.txt blocks automated fetching of `reversebeacon.net/skimmers/detail.php` and `main.php` — any future automated/scripted pull of RBN data should target the CSV/raw endpoints (e.g., W3RGA's dupe_report.csv) or skimmer.dxwatch.com instead, which permitted fetch this session.

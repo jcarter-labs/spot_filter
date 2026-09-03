@@ -10,7 +10,7 @@ citation — these are given the lowest evidentiary weight in scoring.
 - Live-tested filter grammar, bracket-expansion syntax, and field list
   (State=, SkimCQ, etc.), confirmed via direct echo-back from the node
   itself. `[first-party project ADR, 2026-06-20 to 2026-07-01, positive]`
-  — source: `nc7j_filter_adr.md` ADR-1 through ADR-11 (this repo).
+  — source: `../../adr/nc7j_filter_adr.md` ADR-1 through ADR-11 (this repo).
 - Listed as active RBN-enabled AR-Cluster node. `[curated directory,
   2026-07-31 (NG3K page last-updated date), neutral]`
 - No outage or negative-sentiment reports found in web/forum search this
