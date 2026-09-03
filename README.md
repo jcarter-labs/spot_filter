@@ -2,6 +2,10 @@
 
 DX cluster filter configuration for contest band monitoring on the NC7J AR-Cluster node (`dxc.nc7j.com:7373`).
 
+## Program Flow
+
+![DX filter command pipeline](docs/dx-filter-pipeline.svg)
+
 ## Environment
 
 | | |
@@ -45,10 +49,6 @@ python spot_filter.py --bands 40,20,15,10 --spotters regional --cont AS
 python spot_filter.py --state WV
 python spot_filter.py --bands 40,20,17,15,12,10 --spotters regional --call-prefix JA
 ```
-
-### Data flow
-
-![DX filter command pipeline](docs/dx-filter-pipeline.svg)
 
 ## Other files
 
